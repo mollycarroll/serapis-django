@@ -1,0 +1,105 @@
+{% extends 'shows/index.html' %}
+{% load static %}
+
+{% block title %}Serapis - Music{% endblock %}
+
+<body>
+  {% block main %}
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered has-text-white">
+          Serapis Studio Recordings
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="columns">
+    <div class="column">
+      <p class="title is-4 has-margin-left-10 has-text-white">"Studio B" by Serapis (2008)</p>
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/167305247&color=%23efcb74&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+    <div class="column">
+      <p class="title is-4 has-margin-left-10 has-text-white">
+        "Myth" by Serapis (2004)
+      </p>
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/167067525&color=%23efcb74&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block secondary %}
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered has-text-white">
+          Serapis Live
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serapis Live -->
+  <section class="tile is-ancestor">
+
+    <div class="tile is-parent">
+
+      <div class="tile is-child">
+        <!-- can i change my mind -->
+        <iframe src="https://www.youtube.com/embed/cmuHsRwcF6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+    <div class="tile is-parent">
+
+      <div class="tile is-child">
+        <!-- that was your mother -->
+        <iframe src="https://www.youtube.com/embed/quli1PnYqBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+    <div class="tile is-parent">
+
+      <div class="tile is-child">
+        <!-- closer to free -->
+        <iframe src="https://www.youtube.com/embed/VH3R43_1s5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+    <div class="tile is-parent">
+
+      <div class="tile is-child">
+        <!-- stir the pot -->
+        <iframe src="https://www.youtube.com/embed/SclNY2jhgOI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+    <div class="tile is-parent">
+
+      <div class="tile is-child">
+        <!-- into the mystic -->
+        <iframe src="https://www.youtube.com/embed/UqJUnc0XjQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+    <div class="tile is-parent">
+
+      <div class="tile is-child">
+        <!-- giving it up for your love -->
+        <iframe src="https://www.youtube.com/embed/J3R2nE53v90" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+  </section>
+
+  {% endblock %}
+</body>

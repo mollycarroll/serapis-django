@@ -1,0 +1,25 @@
+body {
+  background-image: url('dirty-old-black-shirt.png');
+  background-color: #000000;
+}
+
+section {
+  flex-wrap: wrap;
+}
+
+#nav-toggle-state {
+  display: none;
+}
+
+#nav-toggle-state:checked ~ .nav-menu {
+  display: block;
+}
+
+.bandname {
+  text-align: center;
+}
+
+.show-text {
+  margin: 5px;
+  color: #000000;
+}

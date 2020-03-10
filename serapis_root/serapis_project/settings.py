@@ -28,7 +28,6 @@ ALLOWED_HOSTS = [
     'mollycg.pythonanywhere.com',
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [

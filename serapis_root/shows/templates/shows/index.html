@@ -1,4 +1,5 @@
 {% load static %}
+{% get_media_prefix as MEDIA_URL %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -8,7 +9,25 @@
   <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static '/css/bulma-helpers.css' %}">
   <script src="{% static '/js/index.js' %}"></script>
-  <title>{% block title %}Serapis - Home {% endblock %}</title>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <!-- tiny slider files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+
+  <script type="module">
+    import {tns} from '../../../node_modules/tiny-slider/src/tiny-slider.js';
+
+  var slider = tns({
+    container: '.my-slider',
+    items: 1,
+    slideBy: 1,
+    autoplay: true
+  });
+  </script>
+
+  <!-- page title -->
+  <title>{% block title %}Serapis - Authentic Rock Music{% endblock %}</title>
   {% load django_simple_bulma %}
   {% bulma %}
   {% font_awesome %}
@@ -66,6 +85,49 @@
     </div>
   </nav>
 
+  <!-- Photo Slideshow -->
+  <!-- <div class="my-slider">
+    <div class="image is-5by3"> <img src="https://picsum.photos/500/300" /> </div>
+    <div> <img src="https://picsum.photos/500/300" /> </div>
+    <div> <img src="https://picsum.photos/500/300" /> </div>
+  </div> -->
+
+  <div id="#autoplay">
+    <div class="my-slider">
+      <div class="slider-item">
+        <div class="slider-card">
+          <img src="https://placeimg.com/200/150/any" alt="">
+          <h2>Title 1</h2>
+          <p class="card_description">Loresm ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="slider-card">
+          <img src="https://placeimg.com/200/150/nature" alt="">
+          <h2>Title 2</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="slider-card">
+          <img src="https://placeimg.com/200/150/nature/2" alt="">
+          <h2>Title 3</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+        </div>
+      </div>
+      <div class="slider-item">
+        <div class="slider-card">
+          <img src="https://placeimg.com/200/150/nature/3" alt="">
+          <h2>Title 4</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   {% block main %}
   <section class="section">
     <div class="container is-fullhd">
@@ -115,9 +177,9 @@
   <h1 class="title has-text-centered has-text-white">Serapis is...</h1>
 
   <section class="columns">
+    {% for member in members %}
     <div class="card column has-margin-20 is-paddingless">
       <div class="card-image">
-        {% for member in members %}
         <figure class="image">
           <img src="{{ MEDIA_URL }}{{ member.photo }}" />
         </figure>
@@ -129,60 +191,13 @@
         <p class="subtitle is-7">
           {{ member.description }}
         </p>
-        {% endfor %}
       </div>
     </div>
 
-    <div class="card column has-margin-20 is-paddingless">
-      <div class="card-image">
-        <figure class="image">
-          <img src="{% static '/css/kirkwood2019-tony.jpg' %}" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <p class="title is-5">
-          Tony Chambers
-        </p>
-        <p class="subtitle is-7">
-          guitars and vocals
-        </p>
-      </div>
-    </div>
+    {% endfor %}
 
-    <div class="card column has-margin-20 is-paddingless">
-      <div class="card-image">
-        <figure class="image">
-          <img src="{% static '/css/kirkwood2019-bob.jpg' %}" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <p class="title is-5">
-          Bob Gleason
-        </p>
-        <p class="subtitle is-7">
-          drums and things
-        </p>
-      </div>
-    </div>
-
-    <div class="card column has-margin-20 is-paddingless">
-      <div class="card-image">
-        <figure class="image">
-          <img src="{% static '/css/tunersmark.jpg' %}" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <p class="title is-5">
-          Mark Moebeck
-        </p>
-        <p class="subtitle is-7">
-          guitar and vocals
-        </p>
-      </div>
-    </div>
   </section>
   {% endblock %}
-
 </body>
 
 </html>

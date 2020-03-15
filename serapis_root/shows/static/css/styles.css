@@ -23,3 +23,27 @@ section {
   margin: 5px;
   color: #000000;
 }
+
+/* slider */
+.slider-container {
+    max-width: 1000px;
+    padding: 2rem 3rem;
+    background: #e6e6e6;
+    margin: 2rem auto 0 auto;
+    overflow: hidden;
+    border-radius: 5px;
+    position:relative;
+    &:before {
+        content: '.slider-container';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: blue;
+    }
+}
+
+img {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+}

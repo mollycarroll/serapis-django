@@ -1,0 +1,23 @@
+{
+  "name": "serapis_project",
+  "version": "1.0.0",
+  "description": "I created a Django application with data models for dynamically generated show date display on home page. Admin site included for Serapis members to update data without modifying site code.",
+  "main": "index.js",
+  "dependencies": {
+    "tiny-slider": "^2.9.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollycg/serapis-django.git"
+  },
+  "author": "Molly Geerling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mollycg/serapis-django/issues"
+  },
+  "homepage": "https://github.com/mollycg/serapis-django#readme"
+}

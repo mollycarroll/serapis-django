@@ -17,7 +17,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# static root is where files are stored after being collected by collectstatic
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 # Quick-start development settings - unsuitable for production
@@ -131,12 +133,13 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 STATICFILES_FINDERS = [
-    # First add the two default Finders, since this will overwrite the default.
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-
-    # Now add our custom SimpleBulma one.
     'django_simple_bulma.finders.SimpleBulmaFinder',
+]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'shows/static'),
 ]
 
 # Custom settings for django-simple-bulma

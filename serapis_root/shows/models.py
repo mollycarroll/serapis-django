@@ -26,3 +26,25 @@ class Musician(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='member_photos')
+
+
+class Photo(models.Model):
+    image = models.ImageField(upload_to='photos')
+    description = models.CharField(max_length=100)
+
+    HOME_SLIDESHOW = 'HS'
+    GALLERY = 'GY'
+
+    PHOTO_CATEGORY_CHOICES = [
+        (HOME_SLIDESHOW, 'Home page slideshow'),
+        (GALLERY, 'Photo gallery'),
+    ]
+
+    photo_category = models.CharField(
+        max_length=2,
+        choices=PHOTO_CATEGORY_CHOICES,
+        default=GALLERY,
+    )
+
+    def __str__(self):
+        return(str(self.description))

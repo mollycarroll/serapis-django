@@ -30,7 +30,7 @@ class Musician(models.Model):
 
 class Photo(models.Model):
     image = models.ImageField(upload_to='photos')
-    description = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, default="name")
 
     HOME_SLIDESHOW = 'HS'
     GALLERY = 'GY'
@@ -47,4 +47,4 @@ class Photo(models.Model):
     )
 
     def __str__(self):
-        return(str(self.description))
+        return(str(self.name))

@@ -1,4 +1,5 @@
 {% load static %}
+{% load slideshow %}
 {% get_media_prefix as MEDIA_URL %}
 
 <!DOCTYPE html>
@@ -74,21 +75,13 @@
   <!-- photo slider -->
   <section>
     <div class="home-slider">
+      {% for photo in photos %}
       <div class="slides">
         <figure class="image is-2by1">
-          <img src="https://picsum.photos/800/400?random=1" />
+          <img src="{{ MEDIA_URL }}{{ photos.name }}" />
         </figure>
       </div>
-      <div class="slides">
-        <figure class="image is-2by1">
-          <img src="https://picsum.photos/800/400?random=1" />
-        </figure>
-      </div>
-      <div class="slides">
-        <figure class="image is-2by1">
-          <img src="https://picsum.photos/800/400?random=1" />
-        </figure>
-      </div>
+      {% endfor %}
       <!-- next and previous buttons -->
       <a class="prev" onclick="">previous</a>
       <a class="next" onclick="">next</a>

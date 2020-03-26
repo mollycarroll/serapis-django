@@ -154,6 +154,7 @@ BULMA_SETTINGS = {
         "success": "#331832",
         "info": "#000000",
         "warning": "#ddbea8",
-        "body-background-color": "#000000"
+        "body-background-color": "#000000",
+        "family-primary": "Inconsolata"
     }
 }

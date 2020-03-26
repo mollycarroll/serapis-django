@@ -5,14 +5,15 @@ body {
 
 section {
   flex-wrap: wrap;
+  font-family: "Open Sans", sans-serif;
 }
 
-#nav-toggle-state {
-  display: none;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inconsolata", monospace;
 }
 
-#nav-toggle-state:checked ~ .nav-menu {
-  display: block;
+p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .bandname {
@@ -20,8 +21,6 @@ section {
 }
 
 .show-text {
-  margin: 5px;
-  color: #000000;
+  text-align: justify;
+  padding: 4px;
 }
-
-/* slider */

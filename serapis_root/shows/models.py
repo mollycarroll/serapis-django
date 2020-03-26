@@ -29,14 +29,17 @@ class Musician(models.Model):
 
 
 class Photo(models.Model):
-    image = models.ImageField(upload_to='photos')
-    name = models.CharField(max_length=50, default="name")
+    class Meta:
+        ordering = ['name']
 
-    HOME_SLIDESHOW = 'HS'
+    image = models.ImageField(upload_to='photos')
+    name = models.CharField(max_length=50, default='name')
+
+    HOME_BANNER = 'HB'
     GALLERY = 'GY'
 
     PHOTO_CATEGORY_CHOICES = [
-        (HOME_SLIDESHOW, 'Home page slideshow'),
+        (HOME_BANNER, 'Home page photo'),
         (GALLERY, 'Photo gallery'),
     ]
 
@@ -45,6 +48,10 @@ class Photo(models.Model):
         choices=PHOTO_CATEGORY_CHOICES,
         default=GALLERY,
     )
+
+    def is_home_banner(self):
+        if self.photo_category == 'HOME_BANNER':
+            return self.image
 
     def __str__(self):
         return(str(self.name))

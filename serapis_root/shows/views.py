@@ -7,7 +7,7 @@ from .models import Show, Musician, Photo
 def index(request):
     show_list = Show.objects.order_by('show_date')
     members = Musician.objects.order_by('name')
-    photos = Photo.objects.all
+    photos = Photo.objects.order_by('name')
     context = {
         'show_list': show_list,
         'members': members,

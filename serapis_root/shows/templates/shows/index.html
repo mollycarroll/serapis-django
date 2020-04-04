@@ -31,7 +31,7 @@
   <nav class="navbar is-dark">
     <div class="navbar-brand">
       <a class="navbar-item" href="{% url 'shows:index' %}">
-        serapis_stlouis
+        serapis - authentic rock music
       </a>
 
       <div class="navbar-burger burger" data-target="SerapisNav">
@@ -76,17 +76,13 @@
 
   <!-- photo banner -->
   <section>
-    <div class="home-slider">
-      {% for photo in photos %}
-      {% if is_home_banner %}
-      <div class="slides">
-        <figure class="image">
-          <img src="{{ MEDIA_URL }}{{ photo.image }}" />
-        </figure>
-      </div>
-      {% endif %}
-      {% endfor %}
+    <div class="home-banner">
+      {% for banner in banner %}
+      <figure class="image">
+        <img src="{{ MEDIA_URL }}{{ banner.image }}" />
+      </figure>
     </div>
+    {% endfor %}
   </section>
 
   {% block main %}
@@ -135,7 +131,7 @@
       being good musicians and entertainers. But mostly because they honestly love playing music.
     </p>
   </div>
-
+  <br />
   <!-- Members -->
   <h1 class="title has-text-centered has-text-white">Serapis is...</h1>
 

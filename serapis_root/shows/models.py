@@ -28,30 +28,22 @@ class Musician(models.Model):
     photo = models.ImageField(upload_to='member_photos')
 
 
-class Photo(models.Model):
+class HomePhoto(models.Model):
     class Meta:
         ordering = ['name']
 
-    image = models.ImageField(upload_to='photos')
+    image = models.ImageField(upload_to='home_photo')
     name = models.CharField(max_length=50, default='name')
-
-    HOME_BANNER = 'HB'
-    GALLERY = 'GY'
-
-    PHOTO_CATEGORY_CHOICES = [
-        (HOME_BANNER, 'Home page photo'),
-        (GALLERY, 'Photo gallery'),
-    ]
-
-    photo_category = models.CharField(
-        max_length=2,
-        choices=PHOTO_CATEGORY_CHOICES,
-        default=GALLERY,
-    )
-
-    def is_home_banner(self):
-        if self.photo_category == 'HOME_BANNER':
-            return self.image
 
     def __str__(self):
         return(str(self.name))
+
+
+class OnlineVideo(models.Model):
+
+    url = models.URLField
+    title = models.CharField(max_length=100)
+    date = models.DateField
+
+    def __str__(self):
+        return(str(self.title))

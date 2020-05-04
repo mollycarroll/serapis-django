@@ -27,6 +27,6 @@ rjsmin==1.1.0
 six==1.14.0
 sqlparse==0.3.0
 Unidecode==1.1.1
-virtualenv==20.0.7
+virtualenv==20.0.20
 whitenoise==5.0.1
 zipp==3.0.0

@@ -36,7 +36,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'shows',
     'shows.apps.ShowsConfig',
     'django_simple_bulma',
     'django.contrib.admin',

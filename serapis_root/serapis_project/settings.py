@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'shows',
     'shows.apps.ShowsConfig',
     'django_simple_bulma',
     'django.contrib.admin',
@@ -77,7 +78,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'serapis_project.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

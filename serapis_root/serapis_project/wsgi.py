@@ -2,7 +2,6 @@ import os
 import sys
 
 from django.core.wsgi import get_wsgi_application
-from django.contrib.staticfiles.handlers import StaticFilesHandler
 
 path = os.path.expanduser('~/serapis_project')
 
@@ -12,4 +11,4 @@ if path not in sys.path:
 os.environ['DJANGO_SETTINGS_MODULE'] = 'serapis_project.settings'
 
 
-application = StaticFilesHandler(get_wsgi_application())
+application = get_wsgi_application()

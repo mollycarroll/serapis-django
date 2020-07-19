@@ -155,14 +155,17 @@
         </div>
       </div>
     </section>
+
     {% endblock %} {% block secondary %}
     <div>
+      {% for text in home_text %}
       <p
         class="is-size-6 has-text-white has-margin-left-40 has-margin-right-40 has-padding-bottom-10"
       >
-        testing 123
+        {{ home_text.text }}
       </p>
     </div>
+    {% endfor %}
     <br />
     <!-- Members -->
     <h1 class="title has-text-centered has-text-white">Serapis is...</h1>

@@ -20,7 +20,7 @@ filelock==3.0.12
 libsass==0.19.4
 Markdown==3.2.1
 Pillow==7.2.0
-Pygments==2.5.2
+Pygments==2.6.1
 pytz==2020.1
 rcssmin==1.0.6
 rjsmin==1.1.0

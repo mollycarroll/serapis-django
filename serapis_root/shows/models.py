@@ -15,7 +15,10 @@ class Show(models.Model):
     city = models.CharField(max_length=100)
 
 class HomeText(models.Model):
-    text = models.CharField()
+    text = models.CharField(max_length=10000)
+
+    def __str__(self):
+        return str(self.text)
 
 class Musician(models.Model):
     class Meta:

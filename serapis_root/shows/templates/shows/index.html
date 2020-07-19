@@ -1,163 +1,192 @@
-{% load static %}
-{% get_media_prefix as MEDIA_URL %}
+{% load static %} {% get_media_prefix as MEDIA_URL %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/styles.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/bulma-helpers.css' %}"
+    />
+    <script src="{% static 'js/index.js' %}"></script>
+    <link rel="shortcut icon" href="{% static 'css/favicon.ico' %}" />
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static '/css/bulma-helpers.css' %}">
-  <script src="{% static 'js/index.js' %}"></script>
-  <link rel="shortcut icon" href="{% static 'css/favicon.ico' %}" />
+    <!-- page title -->
+    <title>{% block title %}Serapis - Authentic Rock Music{% endblock %}</title>
 
-  <!-- page title -->
-  <title>{% block title %}Serapis - Authentic Rock Music{% endblock %}</title>
+    {% load django_simple_bulma %} {% bulma %} {% font_awesome %}
 
-  {% load django_simple_bulma %}
-  {% bulma %}
-  {% font_awesome %}
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+  <body>
+    {% block Facebook %}
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"
+    ></script>
+    {% endblock %}
 
-<body>
-  {% block Facebook %}
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
-  {% endblock %}
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{% url 'shows:index' %}">
+          serapis - authentic rock music
+        </a>
 
-  <nav class="navbar is-dark">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="{% url 'shows:index' %}">
-        serapis - authentic rock music
-      </a>
-
-      <div class="navbar-burger burger" data-target="SerapisNav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <div id="SerapisNav" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="{% url 'shows:index' %}">Home</a>
-        <a class="navbar-item" href="{% url 'shows:music' %}">Music</a>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <!-- Contact button -->
-            <p class="control">
-              <a class="bd-tw-button button is-black" href="mailto:serapisstl@gmail.com">
-                <span class="icon">
-                  <i class="fas fa-paper-plane">
-                  </i>
-                </span>
-                <span>Contact</span>
-              </a>
-            </p>
-            <!-- Listen button -->
-            <p class="control">
-              <a class="button is-primary" target="blank" href="https://soundcloud.com/serapis-authentic-rock">
-                <span class="icon">
-                  <i class="fas fa-headphones-alt">
-                  </i> </span>
-                <span>Listen</span>
-              </a>
-            </p>
-          </div>
+        <div class="navbar-burger burger" data-target="SerapisNav">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-    </div>
-  </nav>
 
-  <!-- photo banner -->
-  <section>
-    <div class="home-banner">
-      {% for banner in banner %}
-      <figure class="image">
-        <img src="{{ MEDIA_URL }}{{ banner.image }}" />
-      </figure>
-    </div>
-    {% endfor %}
-  </section>
-
-  {% block main %}
-  <section class="section">
-    <div class="container is-fullhd">
-      <div class="columns">
-        <div class="column is-narrow">
-          <img src="{% static '/css/mummy.jpg' %}" />
-          <h1 class="title has-text-white has-text-centered">Serapis</h1>
-          <div class="fb-page" data-href="https://www.facebook.com/SerapisStL/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-            <blockquote cite="https://www.facebook.com/SerapisStL/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SerapisStL/">Serapis</a></blockquote>
-          </div>
+      <div id="SerapisNav" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="{% url 'shows:index' %}">Home</a>
+          <a class="navbar-item" href="{% url 'shows:music' %}">Music</a>
         </div>
-
-        <!-- upcoming shows -->
-        <div class="column">
-          <h1 class="title has-text-white">Upcoming Shows</h1>
-          <div class="tile is-ancestor">
-            <div class="tile is-vertical is-parent">
-              {% for show in show_list %}
-              <article class="tile is-child box has-background-warning has-text-info show-items">
-                <span class="is-size-3 show-text">
-                  {{show.venue}}</span>
-                <span class="is-size-5 show-text">
-                  {{show.city}}</span>
-                <span class="is-size-5 show-text">
-                  {{show.show_date|date:"l M j"}}</span>
-                <span class="is-size-5 show-text">
-                  {{show.show_date|time:"P"}}</span>
-              </article>
-              {% endfor %}
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <!-- Contact button -->
+              <p class="control">
+                <a
+                  class="bd-tw-button button is-black"
+                  href="mailto:serapisstl@gmail.com"
+                >
+                  <span class="icon">
+                    <i class="fas fa-paper-plane"> </i>
+                  </span>
+                  <span>Contact</span>
+                </a>
+              </p>
+              <!-- Listen button -->
+              <p class="control">
+                <a
+                  class="button is-primary"
+                  target="blank"
+                  href="https://soundcloud.com/serapis-authentic-rock"
+                >
+                  <span class="icon">
+                    <i class="fas fa-headphones-alt"> </i>
+                  </span>
+                  <span>Listen</span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  {% endblock %}
+    </nav>
 
-  {% block secondary %}
-  <div>
-    <p class="is-size-6 has-text-white has-margin-left-40 has-margin-right-40 has-padding-bottom-10">
-      For over 30 years, the band Serapis has worked hard to develop a sound that stands apart from other St. Louis area bands. A performance list that includes original rock, blues, and reggae - blended with carefully selected cover music has made
-      Serapis a leader on the St. Louis music scene. Serapis is a classic American band in every sense of the word. Originating in garages of a midwestern town, these guys honed their craft with millions of hours logged in smoke-filled bars and
-      stages nation-wide. From the beginning, their choice has always been to play “something different” - to champion the unsung heroes, and not to simply recite the hits. They have been able to pull off this stunt for so many years simply by
-      being good musicians and entertainers. But mostly because they honestly love playing music.
-    </p>
-  </div>
-  <br />
-  <!-- Members -->
-  <h1 class="title has-text-centered has-text-white">Serapis is...</h1>
-
-  <section class="columns">
-    {% for member in members %}
-    <div class="card column has-margin-20 is-paddingless">
-      <div class="card-image">
+    <!-- photo banner -->
+    <section>
+      <div class="home-banner">
+        {% for banner in banner %}
         <figure class="image">
-          <img src="{{ MEDIA_URL }}{{ member.photo }}" />
+          <img src="{{ MEDIA_URL }}{{ banner.image }}" />
         </figure>
       </div>
-      <div class="card-content">
-        <p class="title is-5">
-          {{ member.name }}
-        </p>
-        <p class="subtitle is-7">
-          {{ member.description }}
-        </p>
+      {% endfor %}
+    </section>
+
+    {% block main %}
+    <section class="section">
+      <div class="container is-fullhd">
+        <div class="columns">
+          <div class="column is-narrow">
+            <img src="{% static '/css/mummy.jpg' %}" />
+            <h1 class="title has-text-white has-text-centered">Serapis</h1>
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/SerapisStL/"
+              data-tabs="timeline"
+              data-width=""
+              data-height=""
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/SerapisStL/"
+                class="fb-xfbml-parse-ignore"
+              >
+                <a href="https://www.facebook.com/SerapisStL/">Serapis</a>
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- upcoming shows -->
+          <div class="column">
+            <h1 class="title has-text-white">Upcoming Shows</h1>
+            <div class="tile is-ancestor">
+              <div class="tile is-vertical is-parent">
+                {% for show in show_list %}
+                <article
+                  class="tile is-child box has-background-warning has-text-info show-items"
+                >
+                  <span class="is-size-3 show-text"> {{show.venue}}</span>
+                  <span class="is-size-5 show-text"> {{show.city}}</span>
+                  <span class="is-size-5 show-text">
+                    {{show.show_date|date:"l M j"}}</span
+                  >
+                  <span class="is-size-5 show-text">
+                    {{show.show_date|time:"P"}}</span
+                  >
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+    {% endblock %} {% block secondary %}
+    <div>
+      <p
+        class="is-size-6 has-text-white has-margin-left-40 has-margin-right-40 has-padding-bottom-10"
+      >
+        testing 123
+      </p>
     </div>
+    <br />
+    <!-- Members -->
+    <h1 class="title has-text-centered has-text-white">Serapis is...</h1>
 
-    {% endfor %}
+    <section class="columns">
+      {% for member in members %}
+      <div class="card column has-margin-20 is-paddingless">
+        <div class="card-image">
+          <figure class="image">
+            <img src="{{ MEDIA_URL }}{{ member.photo }}" />
+          </figure>
+        </div>
+        <div class="card-content">
+          <p class="title is-5">
+            {{ member.name }}
+          </p>
+          <p class="subtitle is-7">
+            {{ member.description }}
+          </p>
+        </div>
+      </div>
 
-  </section>
-  {% endblock %}
-
-</body>
-
+      {% endfor %}
+    </section>
+    {% endblock %}
+  </body>
 </html>

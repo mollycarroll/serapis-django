@@ -1,0 +1,14 @@
+{
+  "name": "serapis_root",
+  "version": "1.0.0",
+  "description": "Serapis band website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Molly Geerling",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.0"
+  }
+}

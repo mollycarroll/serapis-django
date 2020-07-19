@@ -9,6 +9,8 @@
   "author": "Molly Geerling",
   "license": "ISC",
   "dependencies": {
-    "bulma": "^0.9.0"
-  }
+    "bulma": "^0.9.0",
+    "bulma-helpers": "^0.3.12"
+  },
+  "devDependencies": {}
 }

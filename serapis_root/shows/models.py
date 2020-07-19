@@ -1,7 +1,6 @@
 from django.db import models
 from django import forms
 
-
 class Show(models.Model):
     class Meta:
         ordering = ['-show_date']
@@ -15,6 +14,8 @@ class Show(models.Model):
 
     city = models.CharField(max_length=100)
 
+class HomeText(models.Model):
+    text = models.CharField()
 
 class Musician(models.Model):
     class Meta:

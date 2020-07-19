@@ -3,7 +3,7 @@ asgiref==3.2.10
 closure==20191111
 distlib==0.3.0
 Django==3.0.7
-django-appconf==1.0.3
+django-appconf==1.0.4
 django-compressor==2.4
 django-cors-headers==3.2.1
 django-filer==1.7.0

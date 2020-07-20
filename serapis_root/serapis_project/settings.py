@@ -26,12 +26,12 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8w$1*qn%&z$st)nbhh4s2c2*psk2&qu_@g9%unjy-v(on4i=_='
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['mollycg.pythonanywhere.com']
 
 # Application definition
 

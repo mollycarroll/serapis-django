@@ -1,5 +1,5 @@
 appdirs==1.4.3
-asgiref==3.2.3
+asgiref==3.2.10
 closure==20191111
 distlib==0.3.0
 Django==3.0.7

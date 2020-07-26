@@ -2,7 +2,7 @@ appdirs==1.4.3
 asgiref==3.2.3
 closure==20191111
 distlib==0.3.0
-django>=3.0.7
+django==3.0.7
 django-appconf==1.0.3
 django-compressor==2.4
 django-cors-headers==3.2.1

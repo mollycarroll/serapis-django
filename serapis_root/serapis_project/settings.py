@@ -29,12 +29,9 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 SECRET_KEY = 'g0a$kal1c3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'mollycg.pythonanywhere.com',
-    'www.serapisstl.com'
-]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 

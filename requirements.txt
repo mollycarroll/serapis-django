@@ -18,7 +18,7 @@ django-crispy-forms==1.9.1
 django-debug-toolbar==2.2
 django-environ==0.4.5
 django-extensions==3.0.3
-django-filer==1.7.0
+django-filer==1.7.1
 django-hvad==1.8.0
 django-js-asset==1.2.2
 django-libs==2.0.3

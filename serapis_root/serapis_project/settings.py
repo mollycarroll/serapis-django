@@ -29,9 +29,9 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 SECRET_KEY = 'g0a$kal1c3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.serapisstl.com']
 
 # Application definition
 

@@ -1,4 +1,4 @@
-appdirs==1.4.3
+appdirs==1.4.4
 asgiref==3.2.3
 closure==20191111
 distlib==0.3.0

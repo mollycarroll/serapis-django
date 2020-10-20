@@ -18,7 +18,7 @@ djangorestframework==3.11.0
 easy-thumbnails==2.7
 filelock==3.0.12
 libsass==0.19.4
-Markdown==3.2.1
+Markdown==3.3.2
 Pillow==7.0.0
 Pygments==2.5.2
 pytz==2019.3
